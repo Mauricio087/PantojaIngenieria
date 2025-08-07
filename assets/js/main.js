@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', initAccessibility);
 // Resources Modal Functions
 function openResourcesModal() {
     const modal = document.getElementById('resourcesModal');
-    modal.classList.add('show');
+    modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
     
     // Close modal when clicking outside
@@ -436,7 +436,7 @@ function openResourcesModal() {
     
     // Close modal with Escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && modal.classList.contains('show')) {
+        if (e.key === 'Escape' && modal.style.display === 'block') {
             closeResourcesModal();
         }
     });
@@ -444,7 +444,7 @@ function openResourcesModal() {
 
 function closeResourcesModal() {
     const modal = document.getElementById('resourcesModal');
-    modal.classList.remove('show');
+    modal.style.display = 'none';
     document.body.style.overflow = 'auto';
 }
 
@@ -462,4 +462,35 @@ if ('serviceWorker' in navigator) {
         //     .then(registration => console.log('SW registered'))
         //     .catch(error => console.log('SW registration failed'));
     });
+}
+
+// Experience Modal Functions
+function openExperienceModal(type) {
+    const modal = document.getElementById('experienceModal');
+    if (modal) {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        
+        // Close modal when clicking outside
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeExperienceModal();
+            }
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeExperienceModal();
+            }
+        });
+    }
+}
+
+function closeExperienceModal() {
+    const modal = document.getElementById('experienceModal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Modal</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+    <div style="padding: 50px;">
+        <h1>Test del Modal de Experiencia</h1>
+        <button class="view-more-btn" onclick="openExperienceModal('engineering')">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 5v14M5 12h14"/>
+            </svg>
+            Ver más proyectos
+        </button>
+    </div>
+
+    <!-- Experience Modal -->
+    <div id="experienceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Experiencia Completa en Ingeniería y Arquitectura</h2>
+                <span class="modal-close" onclick="closeExperienceModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="experience-section">
+                    <h3>Proyectos Destacados</h3>
+                    <ul class="modal-project-list">
+                        <li>Desarrollo de la Ingeniería para la línea 1 y 2 del Metro de Santiago</li>
+                        <li>Desarrollo de la Arquitectura de detalle para los Talleres Neptuno de la línea 1 del Metro de Santiago</li>
+                        <li>Desarrollo de la Ingeniería de detalle para las plantas Termoeléctricas N° 11, 12 y 13 en Tocopilla para CODELCO</li>
+                        <li>Desarrollo en terreno del proyecto de Piping para los Yacimientos Petrolíferos Bolivianos en Arica</li>
+                        <li>Desarrollo de proyecto de Estructura y Piping para la Planta de Ácido Sulfúrico N° 2 de Chuquicamata</li>
+                        <li>Sistema de Interconectado Norte Grande, desarrollo de fundaciones y estructura metálica de torres de Alta Tensión</li>
+                        <li>Desarrollo de Cálculo y Arquitectura para las Centrales Eléctricas de Alto Jahuel, Colbún y Machicura para ENDESA</li>
+                        <li>Diseño de Estructuras metálicas para la ampliación de Planta el Cobre para Minera Disputada de las Condes</li>
+                        <li>Desarrollo de la Ingeniería básica y Presupuesto de Construcción de la ampliación de Minera Disputada de Las Condes</li>
+                        <li>Jefe de Proyecto para el Campamento Base y Campamento de Construcción de Minera la Escondida</li>
+                        <li>Jefe de Programación de Proyectos para Industria Metalmecanica Makina en Santiago</li>
+                        <li>Proyectista de Arquitectura en altura para oficina de Arquitectura Gastón Saint Jean</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

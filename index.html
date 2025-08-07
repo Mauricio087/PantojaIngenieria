@@ -103,7 +103,7 @@
           </div>
 
           <div class="experience-content">
-            <!-- Engineering Experience -->
+            <!-- Engineering and Architecture Experience -->
             <div class="experience-card">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -112,32 +112,72 @@
                   />
                 </svg>
               </div>
-              <h3 class="card-title">Experiencia en Ingeniería</h3>
+              <h3 class="card-title">
+                Experiencia en Ingeniería y Arquitectura
+              </h3>
               <p class="card-description">
                 Trayectoria técnica desde 1975 con proyectos destacados:
               </p>
               <ul class="card-list">
                 <li>
-                  Desarrollo de ingeniería de detalle para la Planta de Ácido
-                  Sulfúrico en Chuquicamata (CODELCO)
+                  Desarrollo de la Ingeniería para la línea 1 y 2 del Metro de
+                  Santiago
                 </li>
                 <li>
-                  Proyectos de piping para plantas industriales como YPF
-                  Bolivianos y MALLOA
+                  Desarrollo de la Arquitectura de detalle para los Talleres
+                  Neptuno de la línea 1 del Metro de Santiago
                 </li>
                 <li>
-                  Diseño de estructuras metálicas para la Ampliación de Minera
-                  El Cobre (Minera Disputada de Las Condes)
+                  Desarrollo de la Ingeniería de detalle para las plantas
+                  Termoeléctricas N° 11, 12 y 13 en Tocopilla para CODELCO
                 </li>
               </ul>
-              <blockquote class="card-quote">
-                "Nuestra profunda experiencia en ingeniería nos permite
-                anticipar detalles técnicos y ofrecer cubicaciones más completas
-                y exactas."
-              </blockquote>
+              <button
+                class="btn btn-primary view-more-btn"
+                onclick="openExperienceModal('engineering')"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M12 5v14M5 12h14" />
+                </svg>
+                Ver más proyectos
+              </button>
             </div>
 
-            <!-- Administration Experience -->
+            <!-- Teaching Experience -->
+            <div class="experience-card">
+              <div class="card-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+              </div>
+              <h3 class="card-title">Experiencia Docente</h3>
+              <p class="card-description">
+                Formación y capacitación especializada en el sector
+                construcción:
+              </p>
+              <ul class="card-list">
+                <li>
+                  Capacitación a funcionarios de la construcción para la Cámara
+                  Chilena de la Construcción
+                </li>
+                <li>
+                  Profesor ayudante en Cubicaciones y Programación de Obras para
+                  el 6° Semestre de Construcción Civil en la Universidad Andrés
+                  Bello
+                </li>
+              </ul>
+              <div class="skills">
+                <h4>Áreas de especialización:</h4>
+                <div class="skill-tags">
+                  <span class="skill-tag">Cubicaciones</span>
+                  <span class="skill-tag">Programación de Obras</span>
+                  <span class="skill-tag">Capacitación Técnica</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Field Experience -->
             <div class="experience-card">
               <div class="card-icon">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
@@ -145,9 +185,7 @@
                   <polyline points="9,22 9,12 15,12 15,22" />
                 </svg>
               </div>
-              <h3 class="card-title">
-                Experiencia como Administradores de Obra
-              </h3>
+              <h3 class="card-title">Experiencia en Terreno</h3>
               <p class="card-description">
                 Gestión y supervisión especializada en proyectos de gran
                 envergadura:
@@ -155,11 +193,15 @@
               <ul class="card-list">
                 <li>
                   Administrador de Obra para la ampliación de la Viña Cousiño
-                  Macul (6,500 m²)
+                  Macul en Linderos para Constructora Alemparte y Cía. Ltda.
                 </li>
                 <li>
                   Administrador de Obra para la construcción de la Parroquia
-                  Santa Teresa del Niño Jesús en Batuco
+                  Santa Teresa del Niño Jesús en Batuco para Constructora Sega
+                </li>
+                <li>
+                  Administrador de Obra para la reconstrucción del Supermercado
+                  Unimarc Chacabuco en Concepción para Whrth Soto y Asociados
                 </li>
               </ul>
               <div class="skills">
@@ -167,7 +209,7 @@
                 <div class="skill-tags">
                   <span class="skill-tag">Coordinación</span>
                   <span class="skill-tag">Manejo de recursos</span>
-                  <span class="skill-tag">Toma de decisiones</span>
+                  <span class="skill-tag">Supervisión técnica</span>
                 </div>
               </div>
             </div>
@@ -602,7 +644,7 @@
         <div class="footer-bottom">
           <div class="footer-bottom-left">
             <p>
-              &copy; 2024 Pantoja Ingeniería. Todos los derechos reservados.
+              &copy; 2025 Pantoja Ingeniería. Todos los derechos reservados.
             </p>
             <div class="footer-legal">
               <a href="#contacto">Política de Privacidad</a>
@@ -649,6 +691,73 @@
         </div>
       </div>
     </footer>
+
+    <!-- Experience Modal -->
+    <div id="experienceModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Experiencia Completa en Ingeniería y Arquitectura</h2>
+          <span class="modal-close" onclick="closeExperienceModal()"
+            >&times;</span
+          >
+        </div>
+        <div class="modal-body">
+          <div class="experience-section">
+            <h3>Proyectos Destacados</h3>
+            <ul class="modal-project-list">
+              <li>
+                Desarrollo de la Ingeniería para la línea 1 y 2 del Metro de
+                Santiago
+              </li>
+              <li>
+                Desarrollo de la Arquitectura de detalle para los Talleres
+                Neptuno de la línea 1 del Metro de Santiago
+              </li>
+              <li>
+                Desarrollo de la Ingeniería de detalle para las plantas
+                Termoeléctricas N° 11, 12 y 13 en Tocopilla para CODELCO
+              </li>
+              <li>
+                Desarrollo en terreno del proyecto de Piping para los
+                Yacimientos Petrolíferos Bolivianos en Arica
+              </li>
+              <li>
+                Desarrollo de proyecto de Estructura y Piping para la Planta de
+                Ácido Sulfúrico N° 2 de Chuquicamata
+              </li>
+              <li>
+                Sistema de Interconectado Norte Grande, desarrollo de
+                fundaciones y estructura metálica de torres de Alta Tensión
+              </li>
+              <li>
+                Desarrollo de Cálculo y Arquitectura para las Centrales
+                Eléctricas de Alto Jahuel, Colbún y Machicura para ENDESA
+              </li>
+              <li>
+                Diseño de Estructuras metálicas para la ampliación de Planta el
+                Cobre para Minera Disputada de las Condes
+              </li>
+              <li>
+                Desarrollo de la Ingeniería básica y Presupuesto de Construcción
+                de la ampliación de Minera Disputada de Las Condes
+              </li>
+              <li>
+                Jefe de Proyecto para el Campamento Base y Campamento de
+                Construcción de Minera la Escondida
+              </li>
+              <li>
+                Jefe de Programación de Proyectos para Industria Metalmecanica
+                Makina en Santiago
+              </li>
+              <li>
+                Proyectista de Arquitectura en altura para oficina de
+                Arquitectura Gastón Saint Jean
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Resources Modal -->
     <div id="resourcesModal" class="modal">
@@ -775,5 +884,6 @@
     </div>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/modal.js"></script>
   </body>
 </html>
