@@ -1781,3 +1781,280 @@ ience Modal Styles */
     grid-template-columns: 1fr;
   }
 }
+/* Resources Modal Sections */
+.resources-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.resources-section:last-child {
+  margin-bottom: 0;
+}
+
+.resources-section-title {
+  color: var(--dark-blue);
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--primary-blue);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.resources-section-title::before {
+  content: '';
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+  border-radius: 2px;
+}
+
+.resources-list {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.resource-item {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--light-gray);
+  border-radius: var(--border-radius);
+  border-left: 4px solid var(--primary-blue);
+  transition: var(--transition);
+}
+
+.resource-item:hover {
+  background: #e8f4f8;
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(43, 155, 209, 0.2);
+}
+
+.resource-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.resource-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke-width: 2;
+}
+
+.resource-details {
+  flex: 1;
+}
+
+.resource-details h4 {
+  color: var(--dark-blue);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.resource-details p {
+  color: var(--gray-text);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-sm);
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  background: linear-gradient(135deg, var(--success), #2ecc71);
+  color: var(--white);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.4);
+  background: linear-gradient(135deg, #2ecc71, var(--success));
+}
+
+.download-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+/* Responsive Design for Resources */
+@media (max-width: 768px) {
+  .resource-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .resource-icon {
+    align-self: center;
+  }
+  
+  .resources-section-title {
+    font-size: var(--font-size-base);
+  }
+}/* Whats
+App Floating Button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.whatsapp-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  border-radius: 50%;
+  animation: whatsappPulse 2s infinite;
+  z-index: -1;
+}
+
+.whatsapp-btn svg {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: translateY(-3px) scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+.whatsapp-btn:hover svg {
+  transform: scale(1.1);
+}
+
+.whatsapp-tooltip {
+  position: absolute;
+  right: 70px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--dark-blue);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: var(--dark-blue);
+}
+
+.whatsapp-btn:hover .whatsapp-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-10px);
+}
+
+/* Pulse Animation */
+@keyframes whatsappPulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+/* Bounce Animation on Load */
+@keyframes whatsappBounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  40%, 43% {
+    transform: translate3d(0, -10px, 0);
+  }
+  70% {
+    transform: translate3d(0, -5px, 0);
+  }
+  90% {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+.whatsapp-float {
+  animation: whatsappBounce 2s ease-in-out 1s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    bottom: 15px;
+    right: 15px;
+  }
+  
+  .whatsapp-btn {
+    width: 55px;
+    height: 55px;
+  }
+  
+  .whatsapp-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .whatsapp-tooltip {
+    display: none; /* Hide tooltip on mobile */
+  }
+}
+
+/* Hide tooltip on touch devices */
+@media (hover: none) {
+  .whatsapp-tooltip {
+    display: none;
+  }
+}
