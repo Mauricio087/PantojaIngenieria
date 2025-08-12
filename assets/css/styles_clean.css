@@ -2527,6 +2527,34 @@ Section Featured Subtitle */
   height: 3px;
   background: linear-gradient(135deg, var(--primary-blue), var(--light-blue));
   border-radius: 2px;
+}/
+* Carousel Styles */
+.featured-clients-carousel {
+  margin-bottom: var(--spacing-2xl);
+  position: relative;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+  opacity: 1;
 }
 
 .carousel-slide .featured-client-card {
@@ -2958,28 +2986,4 @@ Section Featured Subtitle */
   .carousel-btn-next {
     right: -20px;
   }
-}
-/* Section Client Name */
-.section-client-name {
-  color: #2b9bd1;
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-}
-
-.section-client-name::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(135deg, #2b9bd1, #3498db);
-  border-radius: 2px;
 }

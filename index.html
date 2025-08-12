@@ -9,6 +9,7 @@
       content="Pantoja Ingeniería: Con 40 años de experiencia en ingeniería y construcción, especializados en cubicaciones y presupuestos de obra."
     />
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/carousel.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -329,33 +330,181 @@
             <p class="section-subtitle">
               Con 40 años construyendo confianza con empresas líderes del sector
             </p>
+            <p class="section-featured-subtitle">
+              Uno de Nuestros Clientes Destacados
+            </p>
+            <p class="section-client-name">Brotec Icafal ( Bricsa )</p>
           </div>
 
           <div class="clients-content">
-            <!-- Featured Client Card -->
-            <div class="featured-client">
-              <div class="featured-client-card">
-                <div class="featured-client-image">
-                  <img src="assets/img/edificio_del_rio.jpg" alt="Edificio del Río" class="client-image" />
-                </div>
-                <div class="featured-client-content">
-                  <h3 class="featured-client-title">Uno de Nuestros Clientes Destacados</h3>
-                  <h4 class="featured-project-name">Edificio del Río</h4>
-                  <p class="featured-client-description">
-                    Proyecto emblemático que demuestra nuestra capacidad técnica y experiencia en cubicaciones de gran envergadura, 
-                    donde aplicamos nuestros más altos estándares de precisión y calidad.
-                  </p>
-                  <div class="featured-client-details">
-                    <div class="detail-item">
-                      <span class="detail-label">Tipo de Proyecto:</span>
-                      <span class="detail-value">Edificio Residencial</span>
+            <!-- Featured Clients Carousel -->
+            <div class="featured-clients-carousel">
+              <div class="carousel-container">
+                <div class="carousel-track" id="carouselTrack">
+                  <!-- Slide 1 -->
+                  <div class="carousel-slide active">
+                    <div class="featured-client-card">
+                      <div class="featured-client-image">
+                        <img
+                          src="assets/img/edificio_del_rio.jpg"
+                          alt="Edificio del Río"
+                          class="client-image"
+                        />
+                      </div>
+                      <div class="featured-client-content">
+                        <h4 class="featured-project-name">Edificio del Río</h4>
+                        <p class="featured-client-description">
+                          Proyecto emblemático que demuestra nuestra capacidad
+                          técnica y experiencia en cubicaciones de gran
+                          envergadura, donde aplicamos nuestros más altos
+                          estándares de precisión y calidad.
+                        </p>
+                        <div class="featured-client-details">
+                          <div class="detail-item">
+                            <span class="detail-label">Tipo de Proyecto:</span>
+                            <span class="detail-value"
+                              >Edificio Residencial</span
+                            >
+                          </div>
+                          <div class="detail-item">
+                            <span class="detail-label">Servicios:</span>
+                            <span class="detail-value"
+                              >Cubicaciones y Presupuestos</span
+                            >
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <div class="detail-item">
-                      <span class="detail-label">Servicios:</span>
-                      <span class="detail-value">Cubicaciones y Presupuestos</span>
+                  </div>
+
+                  <!-- Slide 2 -->
+                  <div class="carousel-slide">
+                    <div class="featured-client-card">
+                      <div class="featured-client-image">
+                        <img
+                          src="assets/img/remando.jpg"
+                          alt="Proyecto Remando"
+                          class="client-image"
+                        />
+                      </div>
+                      <div class="featured-client-content">
+                        <h4 class="featured-project-name">Proyecto Remando</h4>
+                        <p class="featured-client-description">
+                          Desarrollo inmobiliario de alta calidad que refleja
+                          nuestra experiencia en proyectos residenciales
+                          complejos, aplicando metodologías avanzadas de
+                          cubicación y control de costos.
+                        </p>
+                        <div class="featured-client-details">
+                          <div class="detail-item">
+                            <span class="detail-label">Tipo de Proyecto:</span>
+                            <span class="detail-value"
+                              >Desarrollo Inmobiliario</span
+                            >
+                          </div>
+                          <div class="detail-item">
+                            <span class="detail-label">Servicios:</span>
+                            <span class="detail-value"
+                              >Cubicaciones y Presupuestos</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 3 -->
+                  <div class="carousel-slide">
+                    <div class="featured-client-card">
+                      <div class="featured-client-image">
+                        <img
+                          src="assets/img/ZAN-EDIFICIO.jpg"
+                          alt="Edificio ZAN"
+                          class="client-image"
+                        />
+                      </div>
+                      <div class="featured-client-content">
+                        <h4 class="featured-project-name">Edificio ZAN</h4>
+                        <p class="featured-client-description">
+                          Proyecto arquitectónico moderno que destaca por su
+                          diseño innovador y la precisión técnica aplicada en
+                          cada etapa de cubicación, demostrando nuestra
+                          versatilidad en proyectos contemporáneos.
+                        </p>
+                        <div class="featured-client-details">
+                          <div class="detail-item">
+                            <span class="detail-label">Tipo de Proyecto:</span>
+                            <span class="detail-value">Edificio Comercial</span>
+                          </div>
+                          <div class="detail-item">
+                            <span class="detail-label">Servicios:</span>
+                            <span class="detail-value"
+                              >Cubicaciones y Supervisión</span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Slide 4 -->
+                  <div class="carousel-slide">
+                    <div class="featured-client-card">
+                      <div class="featured-client-image">
+                        <img
+                          src="assets/img/edificio_del_rio2.jpg"
+                          alt="Edificio del Río - Vista Alternativa"
+                          class="client-image"
+                        />
+                      </div>
+                      <div class="featured-client-content">
+                        <h4 class="featured-project-name">
+                          Edificio del Río - Fase 2
+                        </h4>
+                        <p class="featured-client-description">
+                          Segunda fase del emblemático proyecto Edificio del
+                          Río, donde continuamos aplicando nuestros estándares
+                          de excelencia en cubicaciones y gestión de proyectos
+                          de gran envergadura.
+                        </p>
+                        <div class="featured-client-details">
+                          <div class="detail-item">
+                            <span class="detail-label">Tipo de Proyecto:</span>
+                            <span class="detail-value"
+                              >Ampliación Residencial</span
+                            >
+                          </div>
+                          <div class="detail-item">
+                            <span class="detail-label">Servicios:</span>
+                            <span class="detail-value"
+                              >Cubicaciones y Control</span
+                            >
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
+
+                <!-- Carousel Navigation -->
+                <button class="carousel-btn carousel-btn-prev" id="prevBtn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="15,18 9,12 15,6"></polyline>
+                  </svg>
+                </button>
+                <button class="carousel-btn carousel-btn-next" id="nextBtn">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <polyline points="9,18 15,12 9,6"></polyline>
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Carousel Indicators -->
+              <div class="carousel-indicators">
+                <button class="indicator active" data-slide="0"></button>
+                <button class="indicator" data-slide="1"></button>
+                <button class="indicator" data-slide="2"></button>
+                <button class="indicator" data-slide="3"></button>
               </div>
             </div>
 
@@ -369,12 +518,16 @@
                 </div>
                 <h3 class="client-title">Constructoras</h3>
                 <p class="client-description">
-                  Empresas constructoras que confían en nuestros servicios de cubicaciones y presupuestos para sus proyectos de gran envergadura.
+                  Empresas constructoras que confían en nuestros servicios de
+                  cubicaciones y presupuestos para sus proyectos de gran
+                  envergadura.
                 </p>
                 <ul class="client-examples">
-                  <li>Constructora Alemparte y Cía. Ltda.</li>
+                  <li>Alemparte y Cía. Ltda.</li>
                   <li>Constructora Sega</li>
-                  <li>Whrth Soto y Asociados</li>
+                  <li>Ingeniería y Construcción Ele3</li>
+                  <li>Constructora Oval</li>
+                  <li>Constructora Atenas</li>
                 </ul>
               </div>
 
@@ -388,29 +541,38 @@
                 </div>
                 <h3 class="client-title">Inmobiliarias</h3>
                 <p class="client-description">
-                  Desarrolladores inmobiliarios que requieren análisis precisos de costos y planificación detallada de sus proyectos residenciales y comerciales.
+                  Desarrolladores inmobiliarios que requieren análisis precisos
+                  de costos y planificación detallada de sus proyectos
+                  residenciales y comerciales.
                 </p>
                 <ul class="client-examples">
-                  <li>Proyectos residenciales</li>
-                  <li>Desarrollos comerciales</li>
-                  <li>Complejos habitacionales</li>
+                  <li>Inmobiliaria Actual</li>
+                  <li>Guzmán y Larraín Ltda.</li>
+                  <li>Sencorp Desarrollos Inmobiliarios S.A.</li>
                 </ul>
               </div>
 
               <div class="client-card">
                 <div class="client-icon">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
                   </svg>
                 </div>
                 <h3 class="client-title">Empresas Industriales</h3>
                 <p class="client-description">
-                  Grandes empresas del sector minero, energético e industrial que han confiado en nuestra experiencia técnica especializada.
+                  Grandes empresas del sector minero, energético e industrial
+                  que han confiado en nuestra experiencia técnica especializada.
                 </p>
                 <ul class="client-examples">
                   <li>CODELCO</li>
                   <li>ENDESA</li>
                   <li>Minera Disputada de Las Condes</li>
+                  <li>Emart</li>
+                  <li>Absalón Espinoza</li>
+                  <li>Junta Nacional de Bomberos</li>
+                  <li>Bomberos de Santiago</li>
                 </ul>
               </div>
             </div>
@@ -418,7 +580,9 @@
             <div class="clients-testimonial">
               <div class="testimonial-content">
                 <blockquote class="testimonial-quote">
-                  "La experiencia y precisión técnica de Pantoja Ingeniería nos ha permitido optimizar nuestros procesos de construcción y mantener el control total sobre nuestros presupuestos."
+                  "La experiencia y precisión técnica de Pantoja Ingeniería nos
+                  ha permitido optimizar nuestros procesos de construcción y
+                  mantener el control total sobre nuestros presupuestos."
                 </blockquote>
                 <div class="testimonial-author">
                   <div class="author-info">
@@ -1112,5 +1276,6 @@
 
     <script src="assets/js/main.js"></script>
     <script src="assets/js/modal.js"></script>
+    <script src="assets/js/carousel.js"></script>
   </body>
 </html>

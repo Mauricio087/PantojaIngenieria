@@ -88,4 +88,122 @@ document.addEventListener('DOMContentLoaded', function() {
             whatsappFloat.style.opacity = '0.8';
         }
     }
+});/
+/ Carousel Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = {
+        track: document.getElementById('carouselTrack'),
+        slides: document.querySelectorAll('.carousel-slide'),
+        indicators: document.querySelectorAll('.indicator'),
+        prevBtn: document.getElementById('prevBtn'),
+        nextBtn: document.getElementById('nextBtn'),
+        currentSlide: 0,
+        totalSlides: document.querySelectorAll('.carousel-slide').length,
+        autoPlayInterval: null,
+        autoPlayDelay: 5000
+    };
+
+    // Initialize carousel
+    function initCarousel() {
+        if (!carousel.track || carousel.totalSlides === 0) return;
+        
+        updateCarousel();
+        startAutoPlay();
+        
+        // Event listeners
+        carousel.prevBtn?.addEventListener('click', prevSlide);
+        carousel.nextBtn?.addEventListener('click', nextSlide);
+        
+        // Indicator clicks
+        carousel.indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => goToSlide(index));
+        });
+        
+        // Pause autoplay on hover
+        const carouselContainer = document.querySelector('.featured-clients-carousel');
+        carouselContainer?.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer?.addEventListener('mouseleave', startAutoPlay);
+        
+        // Touch/swipe support
+        let startX = 0;
+        let endX = 0;
+        
+        carousel.track.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+        
+        carousel.track.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = startX - endX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+            }
+        }
+    }
+
+    function updateCarousel() {
+        // Update slides
+        carousel.slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === carousel.currentSlide);
+        });
+        
+        // Update indicators
+        carousel.indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === carousel.currentSlide);
+        });
+        
+        // Transform track
+        const translateX = -carousel.currentSlide * 100;
+        carousel.track.style.transform = `translateX(${translateX}%)`;
+    }
+
+    function nextSlide() {
+        carousel.currentSlide = (carousel.currentSlide + 1) % carousel.totalSlides;
+        updateCarousel();
+        resetAutoPlay();
+    }
+
+    function prevSlide() {
+        carousel.currentSlide = (carousel.currentSlide - 1 + carousel.totalSlides) % carousel.totalSlides;
+        updateCarousel();
+        resetAutoPlay();
+    }
+
+    function goToSlide(index) {
+        carousel.currentSlide = index;
+        updateCarousel();
+        resetAutoPlay();
+    }
+
+    function startAutoPlay() {
+        stopAutoPlay();
+        carousel.autoPlayInterval = setInterval(nextSlide, carousel.autoPlayDelay);
+    }
+
+    function stopAutoPlay() {
+        if (carousel.autoPlayInterval) {
+            clearInterval(carousel.autoPlayInterval);
+            carousel.autoPlayInterval = null;
+        }
+    }
+
+    function resetAutoPlay() {
+        stopAutoPlay();
+        startAutoPlay();
+    }
+
+    // Initialize carousel
+    initCarousel();
+    
+    console.log('Carousel initialized successfully');
 });
