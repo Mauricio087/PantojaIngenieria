@@ -183,8 +183,9 @@
 /* Responsive Design for Carousel */
 @media (max-width: 768px) {
   .featured-clients-carousel {
-    max-width: 100%;
-    margin: 0 1rem 4rem 1rem;
+    max-width: 90%;
+    margin: 0 auto 4rem auto;
+    padding: 0 20px;
   }
   
   .carousel-slide .featured-client-image {

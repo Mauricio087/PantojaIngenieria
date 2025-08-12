@@ -263,7 +263,7 @@ body {
 
 .experience-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: var(--spacing-2xl);
 }
 
@@ -2982,4 +2982,384 @@ Section Featured Subtitle */
   height: 4px;
   background: linear-gradient(135deg, #2b9bd1, #3498db);
   border-radius: 2px;
+}/
+* Field Experience Centered */
+.field-experience-centered {
+  margin: 0 auto !important;
+  max-width: 600px;
+  display: block;
+}
+
+/* Experience Content Layout */
+.experience-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch; /* Force all cards to have the same height */
+}
+
+.experience-card {
+  min-height: 600px; /* Fixed minimum height for all cards */
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #2b9bd1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribute content evenly */
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #2b9bd1, #3498db);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.card-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 2;
+}
+
+.card-title {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-description {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.card-list li {
+  padding: 0.5rem 0;
+  color: #2c3e50;
+  font-weight: 500;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.card-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.skills h4 {
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-tag {
+  background: linear-gradient(135deg, #2b9bd1, #3498db);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Responsive Design for Experience Cards */
+@media (max-width: 768px) {
+  .experience-content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .experience-card {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .field-experience-centered {
+    max-width: 100%;
+  }
+}/
+* Service Card Centered */
+.service-card-centered {
+  grid-column: 2 / 3; /* Position in the center column of a 3-column grid */
+  justify-self: center;
+  margin: 0 auto;
+}
+
+/* Services Grid Layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* Ensure the centered card stays in the middle on larger screens */
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .service-card-centered {
+    grid-column: 2 / 3;
+  }
+}
+
+/* On smaller screens, all cards stack normally */
+@media (max-width: 768px) {
+  .service-card-centered {
+    grid-column: auto;
+    justify-self: auto;
+  }
+}/* Experie
+nce Cards Content Distribution */
+.experience-card .card-list {
+  flex-grow: 1; /* Allow list to expand and fill available space */
+  margin-bottom: 1.5rem;
+}
+
+.experience-card .skills {
+  margin-top: auto; /* Push skills section to bottom */
+}
+
+/* Ensure consistent spacing for all experience cards */
+.experience-card .card-title {
+  margin-bottom: 1rem;
+  min-height: 3rem; /* Consistent title height */
+  display: flex;
+  align-items: center;
+}
+
+.experience-card .card-description {
+  margin-bottom: 1.5rem;
+  min-height: 3rem; /* Consistent description height */
+}
+
+/* Button positioning for cards with buttons */
+.experience-card .view-more-btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* Responsive adjustments for equal height cards */
+@media (max-width: 768px) {
+  .experience-card {
+    min-height: auto; /* Remove fixed height on mobile for better UX */
+    max-width: 100%;
+  }
+  
+  .experience-card .card-title {
+    min-height: auto;
+  }
+  
+  .experience-card .card-description {
+    min-height: auto;
+  }
+}/
+* Equal Height Experience Cards */
+.experience-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch; /* Force all cards to have the same height */
+}
+
+.experience-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  min-height: 650px; /* Fixed minimum height for all cards */
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border-left: 4px solid #2b9bd1;
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Content distribution within cards */
+.experience-card .card-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #2b9bd1, #3498db);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.experience-card .card-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 2;
+}
+
+.experience-card .card-title {
+  color: #2c3e50;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  min-height: 3rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.experience-card .card-description {
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  min-height: 3rem;
+  flex-shrink: 0;
+}
+
+.experience-card .card-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+  flex-grow: 1; /* Allow list to expand and fill available space */
+}
+
+.experience-card .card-list li {
+  padding: 0.5rem 0;
+  color: #2c3e50;
+  font-weight: 500;
+  position: relative;
+  padding-left: 1rem;
+  line-height: 1.4;
+}
+
+.experience-card .card-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.experience-card .skills,
+.experience-card .view-more-btn {
+  margin-top: auto; /* Push to bottom */
+  flex-shrink: 0;
+}
+
+.experience-card .skills h4 {
+  color: #2c3e50;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.experience-card .skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.experience-card .skill-tag {
+  background: linear-gradient(135deg, #2b9bd1, #3498db);
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* View More Button */
+.view-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #2b9bd1, #3498db);
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  align-self: flex-start;
+}
+
+.view-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(43, 155, 209, 0.4);
+}
+
+.view-more-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 2;
+}
+
+/* Field Experience Centered */
+.field-experience-centered {
+  margin: 0 auto !important;
+  max-width: 600px;
+  grid-column: 1 / -1; /* Span full width when there are 3 cards */
+  justify-self: center;
+}
+
+/* Responsive Design for Experience Cards */
+@media (max-width: 768px) {
+  .experience-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .experience-card {
+    max-width: 100%;
+    min-height: auto; /* Remove fixed height on mobile */
+    margin: 0 auto;
+  }
+  
+
+  
+  .experience-card .card-title {
+    min-height: auto;
+  }
+  
+  .experience-card .card-description {
+    min-height: auto;
+  }
 }
