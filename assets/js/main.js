@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initScrollEffects();
     initMobileMenu();
+    initCarousel();
+    initMobileOptimizations();
 });
 
 // Navigation functionality
@@ -204,20 +206,38 @@ function initMobileMenu() {
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+            this.classList.toggle('active');
             
             // Animate hamburger icon
             const hamburger = this.querySelector('.hamburger');
             hamburger.style.transform = navMenu.classList.contains('active') 
                 ? 'rotate(90deg)' 
                 : 'rotate(0deg)';
+            
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+        
+        // Close menu when clicking on nav links
+        const navLinks = navMenu.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+                const hamburger = navToggle.querySelector('.hamburger');
+                hamburger.style.transform = 'rotate(0deg)';
+                document.body.style.overflow = 'auto';
+            });
         });
         
         // Close menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
                 navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
                 const hamburger = navToggle.querySelector('.hamburger');
                 hamburger.style.transform = 'rotate(0deg)';
+                document.body.style.overflow = 'auto';
             }
         });
         
@@ -225,8 +245,10 @@ function initMobileMenu() {
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
                 navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
                 const hamburger = navToggle.querySelector('.hamburger');
                 hamburger.style.transform = 'rotate(0deg)';
+                document.body.style.overflow = 'auto';
             }
         });
     }
@@ -494,3 +516,4 @@ function closeExperienceModal() {
         document.body.style.overflow = 'auto';
     }
 }
+// Ca

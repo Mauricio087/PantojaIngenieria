@@ -1153,10 +1153,102 @@ body {
     --font-size-4xl: 2rem;
     --font-size-3xl: 1.5rem;
     --font-size-2xl: 1.25rem;
-    --spacing-3xl: 3rem;
-    --spacing-2xl: 2rem;
+    --spacing-3xl: 2.5rem;
+    --spacing-2xl: 1.5rem;
   }
 
+  /* Ajustar ancho de contenedores principales para móviles */
+  .container {
+    width: 90%;
+    max-width: 90%;
+    padding: 0 5%;
+  }
+
+  .nav-container {
+    width: 90%;
+    max-width: 90%;
+    padding: 0 5%;
+  }
+
+  .hero-container {
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 5%;
+  }
+
+  /* Ajustes de texto para móviles */
+  .hero-title {
+    font-size: 1.8rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .card-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .service-description,
+  .service-definition,
+  .service-benefit {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  /* Ajustar nombre del cliente destacado para móviles */
+  .section-client-name {
+    font-size: 1.3rem;
+    line-height: 1.2;
+  }
+
+  /* Improved mobile navigation */
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -1164,8 +1256,10 @@ body {
     width: 100%;
     height: calc(100vh - 70px);
     background-color: var(--white);
-    transition: var(--transition);
+    transition: left 0.3s ease-in-out;
     box-shadow: 0 5px 20px var(--shadow);
+    z-index: 999;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
@@ -1174,12 +1268,34 @@ body {
 
   .nav-list {
     flex-direction: column;
-    padding: var(--spacing-xl);
-    gap: var(--spacing-lg);
+    padding: var(--spacing-xl) var(--spacing-lg);
+    gap: var(--spacing-md);
+    height: 100%;
+  }
+
+  .nav-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: var(--spacing-sm);
+  }
+
+  .nav-link {
+    font-size: var(--font-size-lg);
+    padding: var(--spacing-sm) 0;
+    display: block;
   }
 
   .nav-toggle {
     display: block;
+    z-index: 1001;
+  }
+
+  /* Mobile hamburger animation */
+  .hamburger {
+    transition: transform 0.3s ease;
+  }
+
+  .nav-toggle.active .hamburger {
+    transform: rotate(90deg);
   }
 
   .hero {
@@ -1252,50 +1368,236 @@ body {
 }
 
 @media (max-width: 480px) {
+  :root {
+    --font-size-3xl: 1.375rem;
+    --font-size-2xl: 1.125rem;
+    --font-size-xl: 1rem;
+    --spacing-xl: 2rem;
+    --spacing-lg: 1.5rem;
+  }
+
+  /* Ajustar ancho de contenedores para móviles pequeños */
   .container {
-    padding: 0 var(--spacing-sm);
+    width: 85%;
+    max-width: 85%;
+    padding: 0 7.5%;
   }
 
   .nav-container {
+    width: 85%;
+    max-width: 85%;
+    padding: 0 7.5%;
+    height: 60px;
+  }
+
+  .hero-container {
+    width: 85%;
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 0 7.5%;
+  }
+
+  /* Ajustes adicionales de texto para móviles pequeños */
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    padding: 0 var(--spacing-xs);
+  }
+
+  .section-title {
+    font-size: 1.4rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .section-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
     padding: 0 var(--spacing-sm);
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .card-description {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .service-title {
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .service-description,
+  .service-definition,
+  .service-benefit {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .card-list li {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-xs);
+    text-align: left;
+  }
+
+  .contact-details h3 {
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .contact-details a,
+  .contact-details p {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  /* Ajustar nombre del cliente destacado para móviles pequeños */
+  .section-client-name {
+    font-size: 0.95rem;
+    line-height: 1.1;
+  }
+
+  .client-subtitle {
+    font-size: 0.8rem;
+    color: var(--primary-blue);
+    font-weight: 500;
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+  .nav-logo .logo {
+    height: 50px;
+  }
+
+  /* Mobile-first hero section */
+  .hero {
+    padding: calc(60px + var(--spacing-lg)) var(--spacing-sm) var(--spacing-lg);
   }
 
   .hero-title {
     font-size: var(--font-size-3xl);
+    line-height: 1.3;
+    margin-bottom: var(--spacing-sm);
   }
 
   .hero-subtitle {
     font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-sm);
   }
 
+  .hero-description {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .hero-img {
+    height: 250px;
+  }
+
+  /* Mobile cards */
   .experience-card,
   .service-card,
   .contact-form {
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
   }
 
+  .card-icon,
+  .service-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .card-icon svg,
+  .service-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Mobile buttons */
   .btn {
     min-width: auto;
     width: 100%;
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: var(--font-size-base);
   }
 
   .hero-buttons {
     flex-direction: column;
+    gap: var(--spacing-sm);
   }
 
+  /* Mobile contact */
   .contact-item {
     flex-direction: column;
     text-align: center;
+    padding: var(--spacing-md);
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  /* Mobile modals */
+  .modal-content {
+    width: 95%;
+    margin: 2% auto;
+    max-height: 95vh;
+  }
+
+  .modal-header {
+    padding: var(--spacing-md);
+  }
+
+  .modal-body {
+    padding: var(--spacing-md);
   }
 
   .resource-item {
     flex-direction: column;
     text-align: center;
     gap: var(--spacing-sm);
+    padding: var(--spacing-md);
   }
 
   .resource-icon {
     align-self: center;
+    width: 48px;
+    height: 48px;
   }
 
   .download-btn {
@@ -1304,21 +1606,27 @@ body {
     justify-content: center;
   }
 
+  /* Mobile forms */
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: var(--spacing-md);
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
   /* Footer responsive para móviles pequeños */
   .footer {
-    padding: var(--spacing-2xl) 0 0;
+    padding: var(--spacing-xl) 0 0;
   }
 
   .company-stats {
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
   }
 
   .cert-badges {
     justify-content: center;
   }
-
-
 
   .social-link {
     width: 32px;
@@ -1328,6 +1636,25 @@ body {
   .social-link svg {
     width: 16px;
     height: 16px;
+  }
+
+  /* Mobile section spacing */
+  .experience,
+  .services,
+  .contact {
+    padding: var(--spacing-xl) var(--spacing-sm);
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .section-title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .section-subtitle {
+    font-size: var(--font-size-base);
   }
 }
 
