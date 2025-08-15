@@ -1,10 +1,10 @@
-/* Carousel Styles - Simple Version */
+/* Carousel Styles - Fixed Centered Version */
 .featured-clients-carousel {
   margin-bottom: 4rem;
   position: relative;
-  max-width: var(--container-max-width); /* Same as container max-width */
+  max-width: 900px;
   margin: 0 auto 4rem auto;
-  padding: 0 60px; /* Add padding for buttons */
+  padding: 0 80px;
 }
 
 .carousel-container {
@@ -12,19 +12,33 @@
   overflow: hidden;
   border-radius: 12px;
   width: 100%;
+  margin: 0 auto;
+  padding: 0 20px; /* Reduced padding for better centering */
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 400%; /* 4 slides = 400% */
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  width: 100%;
+  align-items: center;
 }
 
 .carousel-slide {
-  width: 25%; /* Each slide takes exactly 25% of track width */
+  width: 100%;
   flex-shrink: 0;
-  padding: 0 10px;
+  padding: 0 20px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .carousel-slide .featured-client-card {
@@ -33,6 +47,7 @@
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   width: 100%;
+  max-width: 400px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -50,12 +65,16 @@
   height: 250px;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carousel-slide .client-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   transition: all 0.3s ease;
 }
 
@@ -185,15 +204,21 @@
   .featured-clients-carousel {
     max-width: 95%;
     margin: 0 auto 3rem auto;
-    padding: 0 15px;
+    padding: 0 50px;
   }
   
   .carousel-container {
     border-radius: 8px;
+    padding: 0 10px;
+  }
+  
+  .carousel-slide {
+    padding: 0 10px;
   }
   
   .carousel-slide .featured-client-card {
     border-radius: 8px;
+    max-width: 350px;
   }
   
   .carousel-slide .featured-client-image {
@@ -322,11 +347,6 @@
 }
 
 /* Touch-friendly carousel */
-.carousel-container {
-  touch-action: pan-y;
-  -webkit-overflow-scrolling: touch;
-}
-
 .carousel-track {
   will-change: transform;
 }
